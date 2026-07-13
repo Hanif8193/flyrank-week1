@@ -1,0 +1,27 @@
+import type { SiteConfig, NavLink, SocialLink } from '@/types/site'
+
+export const SITE_CONFIG: SiteConfig = {
+  name: 'FlowPilot',
+  tagline: 'AI-Powered Workflow Automation',
+  description:
+    'FlowPilot streamlines your development workflow with AI-powered automation. Build faster, deploy smarter.',
+  url: 'https://flowpilot.app',
+  ogImage: '/og-image.png',
+  twitterHandle: '@flowpilot',
+  locale: 'en_US',
+  themeColor: '#6d28d9',
+}
+
+export const NAV_LINKS: NavLink[] = [
+  { label: 'Features', href: '#features' },
+  { label: 'Workflow', href: '#workflow' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'FAQ', href: '#faq' },
+]
+
+export const SOCIAL_LINKS: SocialLink[] = [
+  { label: 'GitHub', href: 'https://github.com/flowpilot' },
+  { label: 'Twitter', href: 'https://twitter.com/flowpilot' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/company/flowpilot' },
+]
