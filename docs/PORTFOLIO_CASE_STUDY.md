@@ -1,8 +1,23 @@
+# Portfolio Voice Card
+
+> Direct, thoughtful, technical, humble, no buzzwords, first-person, focused on decisions and learning.
+
+---
+
+# Professional Bio
+
+Mohammad Hanif Memon is a Frontend AI Engineering intern at FlyRank who builds production-ready web applications with a focus on completeness over complexity. His work spans responsive UI, authentication, database integration, API design, accessibility, testing, and deployment — all within a single codebase. He is particularly interested in learning how to work with AI as a development partner, using it to accelerate implementation while maintaining architectural control. His projects are not demos — they are built to shipping standard.
+
+---
+
 # FlowPilot — Portfolio Case Study
 
 **Author:** Mohammad Hanif Memon
+
 **Program:** FlyRank Frontend AI Engineering Internship — Week 1 Assignment
+
 **Live:** [flyrank-week1.vercel.app](https://flyrank-week1.vercel.app)
+
 **GitHub:** [Hanif8193/flyrank-week1](https://github.com/Hanif8193/flyrank-week1)
 
 ---
@@ -105,3 +120,21 @@ If I started over, I would organize by feature-based modules instead of type-bas
 
 - **GitHub:** [@Hanif8193](https://github.com/Hanif8193)
 - **Live Project:** [flyrank-week1.vercel.app](https://flyrank-week1.vercel.app)
+
+---
+
+# Before / After AI Writing
+
+## Before (Generic AI)
+
+FlowPilot is a modern SaaS application built with Next.js and React. It provides authentication, database integration, testing, and responsive design.
+
+## After (My Voice)
+
+I built FlowPilot because I wanted to know if I could create something that works like a real product, not just something that looks like one.
+
+The waitlist is not a placeholder. It is a complete feature with validation, API integration, database storage, and error handling.
+
+The 46 tests are not decoration — they are the reason I trusted the application enough to deploy it.
+
+Every technical decision was intentional.
