@@ -24,7 +24,9 @@ interface SettingsFormProps {
 
 export function SettingsForm({ user }: SettingsFormProps) {
   const [profileSuccess, setProfileSuccess] = useState(false)
+  const [profileServerError, setProfileServerError] = useState<string | null>(null)
   const [passwordSuccess, setPasswordSuccess] = useState(false)
+  const [passwordServerError, setPasswordServerError] = useState<string | null>(null)
 
   const {
     register: registerProfile,
@@ -59,6 +61,7 @@ export function SettingsForm({ user }: SettingsFormProps) {
   const onSubmitProfile = async (data: UpdateProfileFormData) => {
     setIsSubmittingProfile(true)
     setProfileSuccess(false)
+    setProfileServerError(null)
 
     try {
       const result = await updateProfile(data)
@@ -69,12 +72,15 @@ export function SettingsForm({ user }: SettingsFormProps) {
             setProfileError(field as keyof UpdateProfileFormData, { message })
           }
         }
+        if (result.error && !result.fieldErrors) {
+          setProfileServerError(result.error)
+        }
         return
       }
 
       setProfileSuccess(true)
     } catch {
-      // Server action handles errors
+      setProfileServerError('Something went wrong. Please try again.')
     } finally {
       setIsSubmittingProfile(false)
     }
@@ -83,6 +89,7 @@ export function SettingsForm({ user }: SettingsFormProps) {
   const onSubmitPassword = async (data: ChangePasswordFormData) => {
     setIsSubmittingPassword(true)
     setPasswordSuccess(false)
+    setPasswordServerError(null)
 
     try {
       const result = await changePassword(data)
@@ -95,13 +102,16 @@ export function SettingsForm({ user }: SettingsFormProps) {
             })
           }
         }
+        if (result.error && !result.fieldErrors) {
+          setPasswordServerError(result.error)
+        }
         return
       }
 
       resetPassword()
       setPasswordSuccess(true)
     } catch {
-      // Server action handles errors
+      setPasswordServerError('Something went wrong. Please try again.')
     } finally {
       setIsSubmittingPassword(false)
     }
@@ -125,6 +135,16 @@ export function SettingsForm({ user }: SettingsFormProps) {
           >
             <CheckCircle2 className="size-4" />
             Profile updated successfully.
+          </div>
+        )}
+
+        {profileServerError && (
+          <div
+            role="alert"
+            aria-live="polite"
+            className="bg-destructive/10 text-destructive mb-6 rounded-lg px-4 py-3 text-sm"
+          >
+            {profileServerError}
           </div>
         )}
 
@@ -211,6 +231,16 @@ export function SettingsForm({ user }: SettingsFormProps) {
           >
             <CheckCircle2 className="size-4" />
             Password changed successfully.
+          </div>
+        )}
+
+        {passwordServerError && (
+          <div
+            role="alert"
+            aria-live="polite"
+            className="bg-destructive/10 text-destructive mb-6 rounded-lg px-4 py-3 text-sm"
+          >
+            {passwordServerError}
           </div>
         )}
 
