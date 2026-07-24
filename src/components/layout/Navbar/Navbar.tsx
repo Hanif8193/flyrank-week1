@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 
 import Link from 'next/link'
 
-import { LogOut, Menu, X } from 'lucide-react'
+import { LogOut, Menu, Settings, X } from 'lucide-react'
 import { useSession, signOut } from 'next-auth/react'
 
 import { NAV_LINKS } from '@/lib/constants'
@@ -133,6 +133,13 @@ export function Navbar() {
           {isAuthenticated ? (
             <>
               <span className="text-muted-foreground text-sm">{userName}</span>
+              <Link
+                href="/settings"
+                className={buttonVariants({ variant: 'ghost', size: 'sm' })}
+              >
+                <Settings className="mr-1.5 size-3.5" />
+                Settings
+              </Link>
               <Button
                 type="button"
                 variant="outline"

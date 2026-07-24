@@ -3,7 +3,7 @@
 import { forwardRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
-import { X } from 'lucide-react'
+import { Settings, X } from 'lucide-react'
 import { signOut } from 'next-auth/react'
 
 import { NAV_LINKS } from '@/lib/constants'
@@ -86,6 +86,14 @@ export const MobileMenu = forwardRef<HTMLDivElement, MobileMenuProps>(
                     <p className="text-muted-foreground text-sm">
                       Signed in as {userName}
                     </p>
+                    <Link
+                      href="/settings"
+                      className={buttonVariants({ variant: 'outline' })}
+                      onClick={onClose}
+                    >
+                      <Settings className="mr-2 size-4" />
+                      Settings
+                    </Link>
                     <Button
                       type="button"
                       variant="outline"
